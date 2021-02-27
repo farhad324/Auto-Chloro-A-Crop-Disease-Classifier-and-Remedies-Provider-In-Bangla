@@ -28,7 +28,7 @@ Click on the selected image to predict the disease and get the remedies.
 
 Finally, you get the disease name and remedies. 
 
-## Details
+## Details & Breakdown
 ### Dataset:
 The dataset we will be using contains 17476 images. The train dataset has 16222 images belonging to 15 classes and the test dataset has 1254 images belonging to 15 classes.
 Dataset link: https://www.kaggle.com/vasanthkumar14/plant-disease 
@@ -118,11 +118,11 @@ msgbox()
 
 We used the button boxes in the selection menu and confirmation menu. File-Open box gets the image path and text box shows the prediction and remedies.
 
-### Current Status & Bugs:
+## Current Status & Bugs:
 
 Currently we can show the disease properly if the image is good. Model's accuracy is 94-96%. The dataset is not good enough to predict the diseases properly every time.So, it does show wrong outputs sometimes. Here, we have 3 types of plants. The GUI is pretty simple and it was intentional, although it needs more work. Overall, the CNN model is good enough to show some good results and the whole code is working properly.
 
-### Future Plans:
+## Future Plans:
 1. Increasing the data, based on Bangladeshi Crops/Plants
 2. Creating a website and an app so that it can reach the people easily
 3. Better design for the GUI
