@@ -41,7 +41,27 @@ Dataset link: https://www.kaggle.com/vasanthkumar14/plant-disease
 
 ### Generating Images & Processing:
 
-We used os.listdir for fetching list of all the images in the folder which works as the lables for our dataset. Here we take only the training dataset images from our plant disease dataset.
+We used os.listdir for fetching list of all the images in the folder which works as the lables for our dataset. Here we take only the training dataset images from our plant disease dataset. 
+This part of code is used to define training and testing data into the model.
+```python
+img_size=48
+batch_size=64
+datagen_train=ImageDataGenerator(horizontal_flip=True)
+train_generator=datagen_train.flow_from_directory("PlantVillage/My Drive/train_set",
+target_size=(img_size,img_size),
+batch_size=batch_size,
+class_mode='categorical',
+shuffle=True)
+
+datagen_test=ImageDataGenerator(horizontal_flip=True)
+validation_generator=datagen_test.flow_from_directory("PlantVillage/My Drive/test_data",
+target_size=(img_size,img_size),
+batch_size=batch_size,
+class_mode='categorical',
+shuffle=True)
+
+```
+We also fixed the image size to (48, 48) and the bacth size to 64. We use class mode 'categorical' because more then 2 classes are available here.
 
 ### CNN Model:
 
@@ -86,8 +106,19 @@ detection=load_model('auto_chloro_model.h5') #loading the model
 
 We used easygui, a simple GUI framework based on tkinter. At first, we load the saved model that we trained previously. Basically, we use the fileopenbox function to get the image path. Then, we load the image with load_img method. After that, we covert the image to array and expand the dimension where axis=0, it defines the index at which dimension should be inserted. If input has D dimensions then axis must have value in range [-(D+1), D].
 We make a list of our labels and use multiple if-else statement to match our prediction with the diseases. Finally, we show the disease name and remedies in textbox.
+Noticable functions that we used for the GUI:
 
-### Current Status & Bugs
+```python
+
+buttonbox()
+textbox()
+msgbox()
+
+```
+
+We used the button boxes in the selection menu and confirmation menu. File-Open box gets the image path and text box shows the prediction and remedies.
+
+### Current Status & Bugs:
 
 Currently we can show the disease properly if the image is good. Model's accuracy is 94-96%. The dataset is not good enough to predict the diseases properly every time.So, it does show wrong outputs sometimes. Here, we have 3 types of plants. The GUI is pretty simple and it was intentional, although it needs more work. Overall, the CNN model is good enough to show some good results and the whole code is working properly.
 
