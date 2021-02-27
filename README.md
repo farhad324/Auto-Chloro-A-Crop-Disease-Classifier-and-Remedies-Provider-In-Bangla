@@ -54,4 +54,12 @@ We make a list of our labels and use multiple if-else statement to match our pre
 
 ### Current Status & Bugs
 
-Currently we can show the disease properly if the image is good. Model's accuracy is 94-96%. The dataset is not good enough to predict the diseases properly every time. It does show wrong outputs sometimes. We have 3 types of plants. The GUI is pretty simple and it was intentional, although it needs more work. Overall, the CNN model is good enough to show some good results and the whole code is working properly.
+Currently we can show the disease properly if the image is good. Model's accuracy is 94-96%. The dataset is not good enough to predict the diseases properly every time.So, it does show wrong outputs sometimes. Here, we have 3 types of plants. The GUI is pretty simple and it was intentional, although it needs more work. Overall, the CNN model is good enough to show some good results and the whole code is working properly.
+
+### Future Plans:
+
+•	Increasing the data, based on Bangladeshi Crops/Plants
+•	Creating a website and an app so that it can reach the people easily
+•	Better design for the GUI
+•	Adding this project to another one which is an automated cultivation system using IOT and ML.  
+
