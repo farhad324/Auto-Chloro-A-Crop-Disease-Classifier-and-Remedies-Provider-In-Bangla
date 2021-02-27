@@ -39,13 +39,48 @@ Dataset link: https://www.kaggle.com/vasanthkumar14/plant-disease
 4. Tensorlow
 5. EasyGUI
 
+### Generating Images & Processing:
+
+We used os.listdir for fetching list of all the images in the folder which works as the lables for our dataset. Here we take only the training dataset images from our plant disease dataset.
+
 ### CNN Model:
 
-We used a sequential model. The Sequential Model API is a way to build deep learning models that create a sequential class and create and add model layers to it. We used 4 convolutional layers with “Relu” (Rectified Linear Unit) activation functions. The parameters of the first conv2D are, filter-size, kernel-size, Input-shape. The convolutional layer is then pass to MaxPooling layer,pooliing size is the window size. We use Flatten to convert data into 1 Dimensional form. Dense layer feeds all outputs from the previous layer to all its neurons, each neuron providing one output to the next layer. Dropout function is a simple way to prevent overfitting. Dropout is a technique where randomly selected neurons are ignored during training. We used ‘Adam’ as our optimizer to optimize our data with learning rate. A metric is a function that is used to measure the model's performance. Here we take 15 epochs for train our model. More epochs increase the accuracy and decrease the loss (but it takes more time too).
+We used a sequential model. The Sequential Model API is a way to build deep learning models that create a sequential class and create and add model layers to it. We used 4 convolutional layers with “Relu” (Rectified Linear Unit) activation functions. The parameters of the first conv2D are, filter-size, kernel-size, Input-shape. The convolutional layer is then pass to MaxPooling layer,pooliing size is the window size.
+```python
+detection=Sequential()
 
+#1 -convolutional layer-1
+detection.add(Conv2D(64,(3,3),padding='same',input_shape=(48,48,3)))
+detection.add(BatchNormalization())
+detection.add(Activation('relu'))
+detection.add(MaxPooling2D(pool_size=(2,2)))
+detection.add(Dropout(0.25))
+
+```
+We use Flatten to convert data into 1 Dimensional form. Dense layer feeds all outputs from the previous layer to all its neurons, each neuron providing one output to the next layer. Dropout function is a simple way to prevent overfitting. Dropout is a technique where randomly selected neurons are ignored during training.
+```python
+detection.add(Flatten())
+detection.add(Dense(256))
+detection.add(BatchNormalization())
+detection.add(Activation('relu'))
+detection.add(Dropout(0.25))
+
+```
+We used ‘Adam’ as our optimizer to optimize our data with learning rate. A metric is a function that is used to measure the model's performance. Here we take 15 epochs for train our model. More epochs increase the accuracy and decrease the loss (but it takes more time too).
+```python
+optimum=Adam(lr=0.005)
+detection.compile(optimizer=optimum,loss='categorical_crossentropy',metrics=['accuracy'])
+```
 ### Saving the Model (h5):
 
 It takes a lot of time to train the model. Therefore, we save the trained model so that we can save the time. Moreover, we have to use the saved model in our GUI, as it’s an application.
+
+```python
+detection.save('auto_chloro_model.h5') #saving the model
+```
+```python
+detection=load_model('auto_chloro_model.h5') #loading the model
+```
 
 ### GUI:
 
