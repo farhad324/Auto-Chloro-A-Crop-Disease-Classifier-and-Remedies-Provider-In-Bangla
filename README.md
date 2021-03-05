@@ -129,3 +129,4 @@ Currently, we can show the disease properly if the image is good. The model's ac
 4. Adding this project to another one which is an automated cultivation system using IOT and ML.  
 
 
+Collaborator: Sarah Zabeen https://github.com/SarahZabeen
