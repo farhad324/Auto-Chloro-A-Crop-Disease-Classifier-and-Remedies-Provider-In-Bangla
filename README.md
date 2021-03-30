@@ -1,4 +1,11 @@
 # Auto Chloro - A Plant Disease Classifier & Remedies Provider in Bangla
+
+## Achievement 
+
+1. ** 2nd Runner up in Project Tech Tussle by IEEE Computer Society BRACU Student Chapter**
+
+![certificate1](images/certificate1.PNG)
+
 ## About Auto Chloro
 Auto Chloro is a plant disease classifier & remedies provider that uses deep learning. It can predict diseases and provide remedies. The GUI is based on Bangla Language keeping in mind that, our primary target is to create an application to predict plant diseases and provide remedies for the Bangladeshi people.
 
