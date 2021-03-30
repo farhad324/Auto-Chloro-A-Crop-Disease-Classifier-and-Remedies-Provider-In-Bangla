@@ -2,7 +2,7 @@
 
 ## Achievement 
 
-1. ** 2nd Runner up in Project Tech Tussle by IEEE Computer Society BRACU Student Chapter**
+1. **2nd Runner up in Project Tech Tussle by IEEE Computer Society BRACU Student Chapter**
 
 ![certificate1](images/certificate1.PNG)
 
